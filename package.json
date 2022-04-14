@@ -4,7 +4,8 @@
   "description": "",
   "main": "fakeDb.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +15,13 @@
   },
   "dependencies": {
     "express": "^5.0.0-beta.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoHeyJo/express-shopping-list.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JoHeyJo/express-shopping-list/issues"
+  },
+  "homepage": "https://github.com/JoHeyJo/express-shopping-list#readme"
 }

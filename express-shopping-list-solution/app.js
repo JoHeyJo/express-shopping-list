@@ -1,23 +1,12 @@
-"user strict"
-
 const express = require("express");
+
+const itemsRoutes = require("./routes/items");
+const { NotFoundError } = require("./expressError");
+
 const app = express();
 
-// useful error class to throw
-const { BadRequestError, NotFoundError } = require("./expressErrors");
-const itemRoutes = require("./itemRoutes.js")
-
 app.use(express.json());
-
-
-app.get("/", function (req, res, next) {
-  return res.send("Express Shopping List")
-});
-
-
-app.use("/items", itemRoutes)
-
-
+app.use("/items", itemsRoutes);
 
 
 /** 404 handler: matches unmatched routes; raises NotFoundError. */
@@ -32,7 +21,6 @@ app.use(function (err, req, res, next) {
   if (process.env.NODE_ENV !== "test") console.error(status, err.stack);
   return res.status(status).json({ error: { message, status } });
 });
-
 
 
 module.exports = app;
